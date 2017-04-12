@@ -61,10 +61,15 @@ var clear = document.getElementById('clear');
 
 
 addition.addEventListener('click', function additionFunction(){
-	var multipleDigits = tempArray.join('');
-	var trueNum = parseInt(multipleDigits);
-	array.push(trueNum);
-	tempArray = [];
+	if (tempArray.length >= 1){
+    var multipleDigits = tempArray.join('');
+		var trueNum = parseInt(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+	} else if (typeof sum !== 'undefined'){
+		array = [];
+		array.push(sum);
+	}
 });
 
 subtraction.addEventListener('click', function(){
