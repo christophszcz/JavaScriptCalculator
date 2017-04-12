@@ -2,9 +2,20 @@ var tempArray = [], array = [];
 
 /* Numbers */
 
+var zero  = document.getElementById('zero');
 var one = document.getElementById('one');
 var two = document.getElementById('two');
 var three = document.getElementById('three');
+var four = document.getElementById('four');
+var five = document.getElementById('five');
+var six = document.getElementById('six');
+var seven = document.getElementById('seven');
+var eight = document.getElementById('eight');
+var nine = document.getElementById('nine');
+
+zero.addEventListener('click', function(){
+	tempArray.push(0);
+});
 
 one.addEventListener('click', function(){
 	tempArray.push(1);
@@ -16,6 +27,30 @@ two.addEventListener('click', function(){
 
 three.addEventListener('click', function(){
 	tempArray.push(3);
+});
+
+four.addEventListener('click', function(){
+	tempArray.push(4);
+});
+
+five.addEventListener('click', function(){
+	tempArray.push(5);
+});
+
+six.addEventListener('click', function(){
+	tempArray.push(6);
+});
+
+seven.addEventListener('click', function(){
+	tempArray.push(7);
+});
+
+eight.addEventListener('click', function(){
+	tempArray.push(8);
+});
+
+nine.addEventListener('click', function(){
+	tempArray.push(9);
 });
 
 /* Operations */
