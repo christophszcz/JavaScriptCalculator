@@ -2,7 +2,6 @@ var array = [];
 
 /* Operations */
 var addition = document.getElementById('addition');
-var one = document.getElementById('one');
 var addition = document.getElementById('addition');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
@@ -16,4 +15,8 @@ addition.addEventListener('click', function(){
 	function add(a, b) {     
 		return a + b; 
 	}  
+});
+
+clear.addEventListener('click', function(){
+	array = [];
 });
