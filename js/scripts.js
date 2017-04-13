@@ -16,42 +16,52 @@ var nine = document.getElementById('nine');
 
 zero.addEventListener('click', function(){
 	tempArray.push(0);
+	display.value = tempArray.join('');
 });
 
 one.addEventListener('click', function(){
 	tempArray.push(1);
+	display.value = tempArray.join('');
 });
 
 two.addEventListener('click', function(){
 	tempArray.push(2);
+	display.value = tempArray.join('');
 });
 
 three.addEventListener('click', function(){
 	tempArray.push(3);
+	display.value = tempArray.join('');
 });
 
 four.addEventListener('click', function(){
 	tempArray.push(4);
+	display.value = tempArray.join('');
 });
 
 five.addEventListener('click', function(){
 	tempArray.push(5);
+	display.value = tempArray.join('');
 });
 
 six.addEventListener('click', function(){
 	tempArray.push(6);
+	display.value = tempArray.join('');
 });
 
 seven.addEventListener('click', function(){
 	tempArray.push(7);
+	display.value = tempArray.join('');
 });
 
 eight.addEventListener('click', function(){
 	tempArray.push(8);
+	display.value = tempArray.join('');
 });
 
 nine.addEventListener('click', function(){
 	tempArray.push(9);
+	display.value = tempArray.join('');
 });
 
 /* Operations */
