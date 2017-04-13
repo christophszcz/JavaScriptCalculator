@@ -107,6 +107,7 @@ subtraction.addEventListener('click', subtractionFunction);
 
 clear.addEventListener('click', function(){
 	array = [];
+	tempArray = [];
 	display.value = "";
 });
 
