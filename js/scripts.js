@@ -59,8 +59,10 @@ var subtraction = document.getElementById('subtraction');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 
+/* Addition */
 
-addition.addEventListener('click', function additionFunction(){
+function additionFunction(){
+	additionFunction.called = true;
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseInt(multipleDigits);
@@ -70,16 +72,26 @@ addition.addEventListener('click', function additionFunction(){
 		array = [];
 		array.push(sum);
 	}
-});
+}
 
-subtraction.addEventListener('click', function(){
-	while(array.length > 1){
-		var i = 0, j = 1;
-		var difference = array[i] - array[j];
-		array.splice(0,2);
-		array.unshift(difference);
+addition.addEventListener('click', additionFunction);
+
+/* Subtraction */
+
+function subtractionFunction(){
+	subtractionFunction.called = true;
+	if (tempArray.length >= 1){
+    var multipleDigits = tempArray.join('');
+		var trueNum = parseInt(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+	} else if (typeof difference !== 'undefined'){
+		array = [];
+		array.push(difference);
 	}
-});
+}
+
+subtraction.addEventListener('click', subtractionFunction);
 
 clear.addEventListener('click', function(){
 	array = [];
@@ -91,11 +103,22 @@ equals.addEventListener('click', function (){
 	array.push(trueNum);
 	tempArray = [];
 
-	if (array.length > 1){
+	if (additionFunction.called ){
 		sum = array.reduce(add, 0);  
 		function add(a, b) {     
 			return a + b; 
 		}  
 		console.log(sum);
+	} else if (subtractionFunction.called ){
+		while(array.length > 1){
+			var i = 0, j = 1;
+			var difference = array[i] - array[j];
+			array.splice(0,2);
+			array.unshift(difference);
+		}
+		console.log(difference);
 	}
+
+	additionFunction.called = false;
+	subtractionFunction.called = false;
 });
