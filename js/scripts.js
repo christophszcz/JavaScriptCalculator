@@ -1,4 +1,5 @@
 var tempArray = [], array = [];
+var display = document.getElementById('display');
 
 /* Numbers */
 
@@ -67,6 +68,7 @@ function additionFunction(){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseInt(multipleDigits);
 		array.push(trueNum);
+		display.value = array[0];
 		tempArray = [];
 	} else if (typeof sum !== 'undefined'){
 		array = [];
@@ -95,6 +97,7 @@ subtraction.addEventListener('click', subtractionFunction);
 
 clear.addEventListener('click', function(){
 	array = [];
+	display.value = "";
 });
 
 equals.addEventListener('click', function (){
