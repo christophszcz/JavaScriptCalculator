@@ -106,6 +106,7 @@ function subtractionFunction(){
 subtraction.addEventListener('click', subtractionFunction);
 
 clear.addEventListener('click', function(){
+	display.style.direction = 'RTL';
 	array = [];
 	tempArray = [];
 	display.value = "";
@@ -116,6 +117,7 @@ equals.addEventListener('click', function (){
 	var trueNum = parseInt(multipleDigits);
 	array.push(trueNum);
 	tempArray = [];
+	display.value = "";
 
 	if (additionFunction.called ){
 		sum = array.reduce(add, 0);  
@@ -123,6 +125,7 @@ equals.addEventListener('click', function (){
 			return a + b; 
 		}  
 		console.log(sum);
+		display.value = sum;
 	} else if (subtractionFunction.called ){
 		while(array.length > 1){
 			var i = 0, j = 1;
@@ -131,6 +134,11 @@ equals.addEventListener('click', function (){
 			array.unshift(difference);
 		}
 		console.log(difference);
+		if(difference < 0){
+			display.style.direction = 'ltr';
+			display.style.textAlign = 'right';
+		}
+		display.value = difference;   
 	}
 
 	additionFunction.called = false;
