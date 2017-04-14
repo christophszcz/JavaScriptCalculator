@@ -1,3 +1,8 @@
+.container{
+	display: flex;
+	justify-content: center;
+}
+
 .box{
 	background-color: orange;
   width: 400px;
@@ -14,6 +19,8 @@
 }
 
 #display{
+	font-size: 35px;
 	direction: RTL;
 	text-align: initial;
+	width: 100%;
 }
