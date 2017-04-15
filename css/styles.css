@@ -39,11 +39,19 @@
 
 #equals{
   padding-top: 50px;
-  margin-right: 58px;
   padding-bottom: 50px;
 }
 
 #special-row{
-  float: left;
-  margin-left: 58px;
+  display: flex;
+  justify-content: center;
+}
+
+#one , #two, #three {
+  align-self: flex-start;
+  margin: 7px;
+}
+
+#equals {
+	margin: 7px;
 }
