@@ -9,8 +9,8 @@
 }
 
 #clear {
-	padding-left: 20px;
-  padding-right: 20px;
+	padding-left: 18px;
+  padding-right: 18px;
 }
 
 .container{
@@ -22,6 +22,7 @@
 	background-color: orange;
   width: 400px;
   height: 500px;
+  border-radius: 25px;
 }
 
 .all-buttons{
@@ -29,8 +30,20 @@
 }
 
 #display{
+	margin-top: 30px;
 	font-size: 35px;
 	direction: RTL;
 	text-align: initial;
 	width: 100%;
+}
+
+#equals{
+  padding-top: 50px;
+  margin-right: 58px;
+  padding-bottom: 50px;
+}
+
+#special-row{
+  float: left;
+  margin-left: 58px;
 }
