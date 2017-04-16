@@ -26,7 +26,11 @@
 }
 
 .all-buttons{
-	text-align: center;
+  text-align: center;
+  margin-left: 35px;
+  margin-right: 35px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #display{
@@ -42,16 +46,12 @@
   padding-bottom: 50px;
 }
 
-#special-row{
-  display: flex;
-  justify-content: center;
-}
-
 #one , #two, #three {
   align-self: flex-start;
   margin: 7px;
 }
 
-#equals {
-	margin: 7px;
+.bottom-buttons{
+	position: relative;
+	bottom: 74px;
 }
