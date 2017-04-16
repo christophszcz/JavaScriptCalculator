@@ -1,9 +1,12 @@
 .blue-box{
 	display: flex;
-  height: 145px;
+  height: 190px;
   background-color: #25378D;
   margin-left: 40px;
   margin-right: 40px;
+  border-radius: 150%/100px 100px 0 0;
+  position: relative;
+  top: 29px;
 }
 
 .btn{
@@ -30,8 +33,8 @@
 .box{
 	background-color: #DEB233;
   width: 400px;
-  height: 500px;
-  border-radius: 25px;
+  height: 550px;
+  border-radius: 150%/100px 100px 0 0;
 }
 
 .all-buttons{
@@ -41,6 +44,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
 #display{
