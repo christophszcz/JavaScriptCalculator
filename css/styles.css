@@ -4,8 +4,9 @@
 }
 
 #zero {
-	padding-left: 48px;
-  padding-right: 48px;
+	padding-left: 67px;
+  padding-right: 67px;
+  margin-right: 24px;
 }
 
 #clear {
@@ -31,6 +32,7 @@
   margin-right: 35px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #display{
@@ -42,8 +44,8 @@
 }
 
 #equals{
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 42px;
+  padding-bottom: 42px;
 }
 
 #one , #two, #three {
@@ -53,5 +55,5 @@
 
 .bottom-buttons{
 	position: relative;
-	bottom: 74px;
+	bottom: 57px;
 }
