@@ -44,13 +44,15 @@
 }
 
 #display{
+	font-family:'digital';
 	margin-top: 30px;
-	font-size: 35px;
+	font-size: 40px;
 	direction: RTL;
 	text-align: initial;
 	width: 248px;
 	margin-left: 36px;
-	/*margin-bottom: 20px;*/
+  background-color: #A69C87;
+  border: none;
 }
 
 #equals{
@@ -66,4 +68,9 @@
 .bottom-buttons{
 	position: relative;
 	bottom: 57px;
+}
+
+@font-face{
+ font-family:'digital';
+ src: url('../fonts/digital.ttf');
 }
