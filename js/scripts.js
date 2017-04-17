@@ -126,6 +126,7 @@ decimal.addEventListener('click', function(){
 /* Operations */
 var addition = document.getElementById('addition');
 var subtraction = document.getElementById('subtraction');
+var multiplication = document.getElementById('multiplication');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 
@@ -168,6 +169,26 @@ function subtractionFunction(){
 
 subtraction.addEventListener('click', subtractionFunction);
 
+/* Multiplication */
+
+function multiplicationFunction(){
+	multiplicationFunction.called = true;
+	if (tempArray.length >= 1){
+    var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+		full = false;
+	} else if (typeof product !== 'undefined'){
+		array = [];
+		array.push(product);
+	}
+}
+
+multiplication.addEventListener('click', multiplicationFunction);
+
+/* Clear */ 
+
 clear.addEventListener('click', function(){
 	display.style.direction = 'RTL';
 	array = [];
@@ -204,8 +225,16 @@ equals.addEventListener('click', function (){
 			display.style.textAlign = 'right';
 		}
 		display.value = difference;   
+	} else if (multiplicationFunction.called ){
+		product = array.reduce(multiply);  
+		function multiply(c, d) {     
+			return c * d; 
+		}  
+		console.log(product);
+		display.value = product;
 	}
 
 	additionFunction.called = false;
 	subtractionFunction.called = false;
+	multiplicationFunction.called = false;
 });
