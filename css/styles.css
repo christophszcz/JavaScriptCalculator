@@ -72,6 +72,13 @@
   border-radius: 150%/100px 100px 0 0;
 }
 
+.bottom-box{
+  background-color: #DEB233;
+  width: 400px;
+  height: 30px;
+  border-radius: 150%/0 0 100px 100px;
+}
+
 .all-buttons{
   text-align: center;
   margin-left: 35px;
