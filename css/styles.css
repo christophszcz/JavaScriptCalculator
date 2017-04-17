@@ -8,7 +8,7 @@
 	flex-direction: column;
 	box-shadow: 10px 10px 5px #888888;
 	background-color: #DEB233;
-  width: 360px;
+  width: 324px;
   height: 510px;
   border-radius: 150%/100px 100px 0 0;
 }
@@ -18,7 +18,7 @@
   position: relative;
   bottom: 3px;
   background-color: #DEB233;
-  width: 360px;
+  width: 324px;
   height: 30px;
   border-radius: 150%/0 0 100px 100px;
 }
@@ -59,7 +59,7 @@
 
 .blue-box{
   height: 200px;
-  width: 320px;
+  width: 285px;
   background-color: #25378D;
   margin-left: 20px;
   border-radius: 150%/100px 100px 0 0;
@@ -92,9 +92,9 @@ form{
 }
 
 #zero {
-	padding-left: 67px;
-  padding-right: 67px;
-  margin-right: 24px;
+	padding-left: 61px;
+  padding-right: 61px;
+  margin-right: 6px;
 }
 
 #clear {

@@ -13,6 +13,7 @@ var six = document.getElementById('six');
 var seven = document.getElementById('seven');
 var eight = document.getElementById('eight');
 var nine = document.getElementById('nine');
+var decimal = document.getElementById('decimal');
 
 zero.addEventListener('click', function(){
 	tempArray.push(0);
@@ -64,6 +65,11 @@ nine.addEventListener('click', function(){
 	display.value = tempArray.join('');
 });
 
+decimal.addEventListener('click', function(){
+	tempArray.push('.');
+	display.value = tempArray.join('');
+});
+
 /* Operations */
 var addition = document.getElementById('addition');
 var subtraction = document.getElementById('subtraction');
@@ -76,7 +82,8 @@ function additionFunction(){
 	additionFunction.called = true;
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
-		var trueNum = parseInt(multipleDigits);
+		// var trueNum = parseInt(multipleDigits);
+		var trueNum = parseFloat(multipleDigits);
 		array.push(trueNum);
 		display.value = array[0];
 		tempArray = [];
@@ -94,7 +101,8 @@ function subtractionFunction(){
 	subtractionFunction.called = true;
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
-		var trueNum = parseInt(multipleDigits);
+		// var trueNum = parseInt(multipleDigits);
+		var trueNum = parseFloat(multipleDigits);
 		array.push(trueNum);
 		tempArray = [];
 	} else if (typeof difference !== 'undefined'){
@@ -114,7 +122,8 @@ clear.addEventListener('click', function(){
 
 equals.addEventListener('click', function (){
 	var multipleDigits = tempArray.join('');
-	var trueNum = parseInt(multipleDigits);
+	// var trueNum = parseInt(multipleDigits);
+	var trueNum = parseFloat(multipleDigits);
 	array.push(trueNum);
 	tempArray = [];
 	display.value = "";
