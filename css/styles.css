@@ -2,6 +2,14 @@
   width: 100px;
   height: 30px;
   background-color: #74534B;
+  align-self: center;
+  margin-top: 30px;
+  display: flex;
+}
+
+.solar-cell{
+  width: 25%;
+  border: solid #836954 1px;
 }
 
 .big-title{
@@ -25,7 +33,7 @@
 }
 
 .blue-box{
-  height: 190px;
+  height: 210px;
   background-color: #25378D;
   margin-left: 40px;
   margin-right: 40px;
@@ -76,7 +84,7 @@
 
 #display{
 	font-family:'digital';
-	margin-top: 80px;
+	margin-top: 30px;
 	direction: RTL;
 	text-align: initial;
 	width: 180px;
