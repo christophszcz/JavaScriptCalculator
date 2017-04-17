@@ -140,6 +140,7 @@ function additionFunction(){
 		array.push(trueNum);
 		display.value = array[0];
 		tempArray = [];
+		full = false;
 	} else if (typeof sum !== 'undefined'){
 		array = [];
 		array.push(sum);
@@ -158,6 +159,7 @@ function subtractionFunction(){
 		var trueNum = parseFloat(multipleDigits);
 		array.push(trueNum);
 		tempArray = [];
+		full = false;
 	} else if (typeof difference !== 'undefined'){
 		array = [];
 		array.push(difference);
