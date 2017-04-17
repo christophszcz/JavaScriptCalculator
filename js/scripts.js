@@ -1,5 +1,12 @@
 var tempArray = [], array = [];
 var display = document.getElementById('display');
+var full = false;
+
+function maxNumbers(){
+	if(tempArray.length > 7){
+		full = true;
+	}
+}
 
 /* Numbers */
 
@@ -16,56 +23,100 @@ var nine = document.getElementById('nine');
 var decimal = document.getElementById('decimal');
 
 zero.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(0);
 	display.value = tempArray.join('');
 });
 
 one.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(1);
 	display.value = tempArray.join('');
 });
 
 two.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(2);
 	display.value = tempArray.join('');
 });
 
 three.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(3);
 	display.value = tempArray.join('');
 });
 
 four.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(4);
 	display.value = tempArray.join('');
 });
 
 five.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(5);
 	display.value = tempArray.join('');
 });
 
 six.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	}
 	tempArray.push(6);
 	display.value = tempArray.join('');
 });
 
 seven.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	} 
 	tempArray.push(7);
 	display.value = tempArray.join('');
 });
 
 eight.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	} 
 	tempArray.push(8);
 	display.value = tempArray.join('');
 });
 
 nine.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	} 
 	tempArray.push(9);
 	display.value = tempArray.join('');
 });
 
 decimal.addEventListener('click', function(){
+	maxNumbers();
+	if (full === true){
+		return;
+	} 
 	tempArray.push('.');
 	display.value = tempArray.join('');
 	display.style.direction = 'ltr';
@@ -120,6 +171,7 @@ clear.addEventListener('click', function(){
 	array = [];
 	tempArray = [];
 	display.value = "";
+	full = false;
 });
 
 equals.addEventListener('click', function (){
