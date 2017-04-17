@@ -68,6 +68,8 @@ nine.addEventListener('click', function(){
 decimal.addEventListener('click', function(){
 	tempArray.push('.');
 	display.value = tempArray.join('');
+	display.style.direction = 'ltr';
+	display.style.textAlign = 'right';
 });
 
 /* Operations */
