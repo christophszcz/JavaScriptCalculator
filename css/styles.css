@@ -1,5 +1,23 @@
+.big-title{
+  text-align: center;
+  font-size: 30px;
+  color: #BABCD7;
+  font-weight: 800;
+}
+
+.small-title{
+  text-align: center;
+  font-size: 20px;
+  color: #BABCD7;
+  font-weight: 100;
+  margin-bottom: -10px;
+  margin-top: 15px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
 .blue-box{
-	display: flex;
   height: 190px;
   background-color: #25378D;
   margin-left: 40px;
@@ -49,14 +67,15 @@
 
 #display{
 	font-family:'digital';
-	margin-top: 30px;
-	font-size: 40px;
+	margin-top: 80px;
 	direction: RTL;
 	text-align: initial;
-	width: 248px;
-	margin-left: 36px;
+	width: 180px;
+	margin-left: 70px;
   background-color: #A69C87;
   border: none;
+  font-size: 32px;
+  height: 38px;
 }
 
 #equals{
