@@ -127,6 +127,7 @@ decimal.addEventListener('click', function(){
 var addition = document.getElementById('addition');
 var subtraction = document.getElementById('subtraction');
 var multiplication = document.getElementById('multiplication');
+var division = document.getElementById('division');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 
@@ -187,6 +188,24 @@ function multiplicationFunction(){
 
 multiplication.addEventListener('click', multiplicationFunction);
 
+/* Division */
+
+function divisionFunction(){
+	divisionFunction.called = true;
+	if (tempArray.length >= 1){
+    var divisionDigits = tempArray.join('');
+		var trueNum = parseFloat(divisionDigits);
+		array.push(trueNum);
+		tempArray = [];
+		full = false;
+	} else if (typeof quotient !== 'undefined'){
+		array = [];
+		array.push(quotient);
+	}
+}
+
+division.addEventListener('click', divisionFunction);
+
 /* Clear */ 
 
 clear.addEventListener('click', function(){
@@ -196,6 +215,8 @@ clear.addEventListener('click', function(){
 	display.value = "";
 	full = false;
 });
+
+/* Equals */
 
 equals.addEventListener('click', function (){
 	var multipleDigits = tempArray.join('');
@@ -232,9 +253,17 @@ equals.addEventListener('click', function (){
 		}  
 		console.log(product);
 		display.value = product;
+	} else if (divisionFunction.called ){
+		quotient = array.reduce(divide);  
+		function divide(e, f) {     
+			return e / f; 
+		}  
+		console.log(quotient);
+		display.value = quotient;
 	}
 
 	additionFunction.called = false;
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
+	divisionFunction.called = false;
 });
