@@ -132,14 +132,30 @@ var division = document.getElementById('division');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 
-function operation (){
-
-}
-
 /* Addition */
 
 function additionFunction(){
 	additionFunction.called = true;
+	if (subtractionFunction.called){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+
+		while(array.length > 1){
+			var i = 0, j = 1;
+			var difference = array[i] - array[j];
+			array.splice(0,2);
+			array.unshift(difference);
+		}
+		if(difference < 0){
+			display.style.direction = 'ltr';
+			display.style.textAlign = 'right';
+		}
+		array = [];
+		array.push(difference);
+		subtractionFunction.called = false;
+	}
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseFloat(multipleDigits);
