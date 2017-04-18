@@ -1,6 +1,7 @@
 var tempArray = [], array = [];
 var display = document.getElementById('display');
 var full = false;
+var addCounter = 0;
 
 function maxNumbers(){
 	if(tempArray.length > 7){
@@ -135,12 +136,22 @@ var clear = document.getElementById('clear');
 
 function additionFunction(){
 	additionFunction.called = true;
+	addCounter ++;
+
+	// if (array.length >= 2){
+	// 	var sum = array.reduce(add, 0);  
+	// 	function add(a, b) {     
+	// 		return a + b; 
+	// 	} 
+	// 	array = [];
+	// 	array.push(sum);
+	// }
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		// var trueNum = parseInt(multipleDigits);
 		var trueNum = parseFloat(multipleDigits);
 		array.push(trueNum);
-		display.value = array[0];
+		display.value = array[array.length - 1];
 		tempArray = [];
 		full = false;
 	} else if (typeof sum !== 'undefined'){
@@ -255,8 +266,12 @@ equals.addEventListener('click', function (){
 		display.value = product;
 	} else if (divisionFunction.called ){
 		quotient = array.reduce(divide);  
-		function divide(e, f) {     
-			return e / f; 
+		function divide(e, f) {
+			if (f === 0){
+				return 'UNDEFINED';
+			} else{
+				return e / f; 
+			}
 		}  
 		console.log(quotient);
 		display.value = quotient;
