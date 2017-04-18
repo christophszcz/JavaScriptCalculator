@@ -132,19 +132,14 @@ var division = document.getElementById('division');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 
+function operation (){
+
+}
+
 /* Addition */
 
 function additionFunction(){
 	additionFunction.called = true;
-	// addCounter ++;
-	// if (array.length >= 2){
-	// 	var sum = array.reduce(add, 0);  
-	// 	function add(a, b) {     
-	// 		return a + b; 
-	// 	} 
-	// 	array = [];
-	// 	array.push(sum);
-	// }
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseFloat(multipleDigits);
@@ -164,6 +159,21 @@ addition.addEventListener('click', additionFunction);
 
 function subtractionFunction(){
 	subtractionFunction.called = true;
+	if (additionFunction.called ){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+
+		sum = array.reduce(add, 0);  
+		function add(a, b) {     
+			return a + b; 
+		}  
+		console.log(sum);
+		array = [];
+		array.push(sum);
+		additionFunction.called = false;
+	}
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		// var trueNum = parseInt(multipleDigits);
@@ -223,6 +233,11 @@ clear.addEventListener('click', function(){
 	tempArray = [];
 	display.value = "0";
 	full = false;
+
+	additionFunction.called = false;
+	subtractionFunction.called = false;
+	multiplicationFunction.called = false;
+	divisionFunction.called = false;
 });
 
 /* Equals */
