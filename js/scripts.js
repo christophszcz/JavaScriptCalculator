@@ -1,7 +1,7 @@
 var tempArray = [], array = [];
 var display = document.getElementById('display');
+display.value = "0";
 var full = false;
-var addCounter = 0;
 
 function maxNumbers(){
 	if(tempArray.length > 7){
@@ -136,8 +136,7 @@ var clear = document.getElementById('clear');
 
 function additionFunction(){
 	additionFunction.called = true;
-	addCounter ++;
-
+	// addCounter ++;
 	// if (array.length >= 2){
 	// 	var sum = array.reduce(add, 0);  
 	// 	function add(a, b) {     
@@ -148,7 +147,6 @@ function additionFunction(){
 	// }
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
-		// var trueNum = parseInt(multipleDigits);
 		var trueNum = parseFloat(multipleDigits);
 		array.push(trueNum);
 		display.value = array[array.length - 1];
@@ -223,7 +221,7 @@ clear.addEventListener('click', function(){
 	display.style.direction = 'RTL';
 	array = [];
 	tempArray = [];
-	display.value = "";
+	display.value = "0";
 	full = false;
 });
 
