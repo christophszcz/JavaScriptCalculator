@@ -173,7 +173,6 @@ function additionFunction(){
 		array = [];
 		array.push(difference);
 		subtractionFunction.called = false;
-		// additionFunction.called = false;
 	}
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
@@ -208,7 +207,6 @@ function subtractionFunction(){
 		array = [];
 		array.push(sum);
 		additionFunction.called = false;
-		// subtractionFunction.called = false;
 		sum = undefined;
 	}
 	if (tempArray.length >= 1){
@@ -230,6 +228,22 @@ subtraction.addEventListener('click', subtractionFunction);
 
 function multiplicationFunction(){
 	multiplicationFunction.called = true;
+	if (additionFunction.called ){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+
+		sum = array.reduce(add, 0);  
+		function add(a, b) {     
+			return a + b; 
+		}  
+		console.log(sum);
+		array = [];
+		array.push(sum);
+		additionFunction.called = false;
+		sum = undefined;
+	}
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseFloat(multipleDigits);
@@ -319,6 +333,8 @@ equals.addEventListener('click', function (){
 		}  
 		console.log(product);
 		display.value = product;
+		array = [];
+		array.push(product);
 	} else if (divisionFunction.called ){
 		quotient = array.reduce(divide);  
 		function divide(e, f) {
