@@ -173,6 +173,7 @@ function additionFunction(){
 		array = [];
 		array.push(difference);
 		subtractionFunction.called = false;
+		difference = undefined;
 	}
 
 	if (multiplicationFunction.called){
@@ -181,7 +182,7 @@ function additionFunction(){
 		array.push(trueNum);
 		tempArray = [];
 		display.value = "";
-		
+
 		product = array.reduce(multiply);  
 		function multiply(c, d) {     
 			return c * d; 
@@ -228,6 +229,26 @@ function subtractionFunction(){
 		additionFunction.called = false;
 		sum = undefined;
 	}
+
+	if (multiplicationFunction.called){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+		display.value = "";
+
+		product = array.reduce(multiply);  
+		function multiply(c, d) {     
+			return c * d; 
+		}  
+		console.log(product);
+		display.value = product;
+		array = [];
+		array.push(product);
+		multiplicationFunction.called = false;
+		product = undefined;
+	}
+
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		// var trueNum = parseInt(multipleDigits);
@@ -263,6 +284,29 @@ function multiplicationFunction(){
 		additionFunction.called = false;
 		sum = undefined;
 	}
+
+	if (subtractionFunction.called){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+
+		while(array.length > 1){
+			var i = 0, j = 1;
+			var difference = array[i] - array[j];
+			array.splice(0,2);
+			array.unshift(difference);
+		}
+		if(difference < 0){
+			display.style.direction = 'ltr';
+			display.style.textAlign = 'right';
+		}
+		array = [];
+		array.push(difference);
+		subtractionFunction.called = false;
+		difference = undefined;
+	}
+
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseFloat(multipleDigits);
@@ -344,7 +388,8 @@ equals.addEventListener('click', function (){
 		}
 		display.value = difference; 
 		array = [];
-		array.push(difference);  
+		array.push(difference);
+		difference = undefined;  
 	} else if (multiplicationFunction.called ){
 		product = array.reduce(multiply);  
 		function multiply(c, d) {     
@@ -354,6 +399,7 @@ equals.addEventListener('click', function (){
 		display.value = product;
 		array = [];
 		array.push(product);
+		product = undefined;
 	} else if (divisionFunction.called ){
 		quotient = array.reduce(divide);  
 		function divide(e, f) {
