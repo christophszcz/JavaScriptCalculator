@@ -352,6 +352,28 @@ function multiplicationFunction(){
 		difference = undefined;
 	}
 
+	if (divisionFunction.called ){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+		display.value = "";
+		quotient = array.reduce(divide);  
+		function divide(e, f) {
+			if (f === 0){
+				return 'UNDEFINED';
+			} else{
+				return e / f; 
+			}
+		}  
+		console.log(quotient);
+		display.value = quotient;
+		array = [];
+		array.push(quotient);
+		divisionFunction.called = false;
+		quotient = undefined;
+	}
+
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
 		var trueNum = parseFloat(multipleDigits);
@@ -407,6 +429,25 @@ function divisionFunction(){
 		array.push(difference);
 		subtractionFunction.called = false;
 		difference = undefined;
+	}
+
+	if (multiplicationFunction.called){
+		var multipleDigits = tempArray.join('');
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+		display.value = "";
+
+		product = array.reduce(multiply);  
+		function multiply(c, d) {     
+			return c * d; 
+		}  
+		console.log(product);
+		display.value = product;
+		array = [];
+		array.push(product);
+		multiplicationFunction.called = false;
+		product = undefined;
 	}
 
 	if (tempArray.length >= 1){
