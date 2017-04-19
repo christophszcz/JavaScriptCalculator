@@ -9,6 +9,14 @@ function maxNumbers(){
 	}
 }
 
+/* Remove Zero */
+
+function removeZero(){
+	if (array[0] === 0){
+		array.splice(0,1);
+	}  
+}
+
 /* Numbers */
 
 var zero  = document.getElementById('zero');
@@ -28,6 +36,7 @@ zero.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(0);
 	display.value = tempArray.join('');
 });
@@ -37,6 +46,7 @@ one.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(1);
 	display.value = tempArray.join('');
 });
@@ -46,6 +56,7 @@ two.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(2);
 	display.value = tempArray.join('');
 });
@@ -55,6 +66,7 @@ three.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(3);
 	display.value = tempArray.join('');
 });
@@ -64,6 +76,7 @@ four.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(4);
 	display.value = tempArray.join('');
 });
@@ -73,6 +86,7 @@ five.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(5);
 	display.value = tempArray.join('');
 });
@@ -82,6 +96,7 @@ six.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
+	removeZero();
 	tempArray.push(6);
 	display.value = tempArray.join('');
 });
@@ -91,6 +106,7 @@ seven.addEventListener('click', function(){
 	if (full === true){
 		return;
 	} 
+	removeZero();
 	tempArray.push(7);
 	display.value = tempArray.join('');
 });
@@ -100,6 +116,7 @@ eight.addEventListener('click', function(){
 	if (full === true){
 		return;
 	} 
+	removeZero();
 	tempArray.push(8);
 	display.value = tempArray.join('');
 });
@@ -109,6 +126,7 @@ nine.addEventListener('click', function(){
 	if (full === true){
 		return;
 	} 
+	removeZero();
 	tempArray.push(9);
 	display.value = tempArray.join('');
 });
@@ -155,6 +173,7 @@ function additionFunction(){
 		array = [];
 		array.push(difference);
 		subtractionFunction.called = false;
+		// additionFunction.called = false;
 	}
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
@@ -189,6 +208,8 @@ function subtractionFunction(){
 		array = [];
 		array.push(sum);
 		additionFunction.called = false;
+		// subtractionFunction.called = false;
+		sum = undefined;
 	}
 	if (tempArray.length >= 1){
     var multipleDigits = tempArray.join('');
@@ -273,6 +294,9 @@ equals.addEventListener('click', function (){
 		}  
 		console.log(sum);
 		display.value = sum;
+		array = [];
+		array.push(sum);
+		sum = undefined;
 	} else if (subtractionFunction.called ){
 		while(array.length > 1){
 			var i = 0, j = 1;
@@ -285,7 +309,9 @@ equals.addEventListener('click', function (){
 			display.style.direction = 'ltr';
 			display.style.textAlign = 'right';
 		}
-		display.value = difference;   
+		display.value = difference; 
+		array = [];
+		array.push(difference);  
 	} else if (multiplicationFunction.called ){
 		product = array.reduce(multiply);  
 		function multiply(c, d) {     
