@@ -551,9 +551,13 @@ equals.addEventListener('click', function (){
 	multiplicationFunction.called = false;
 	divisionFunction.called = false;
 
-	var decimalRegex = /([.])\w+/g;
-	if(decimalRegex.exec(display.value)[0].length >= 7){
-		var decimalCutOff = (parseFloat(display.value)).toFixed(6); 
-		display.value = decimalCutOff;
+	var decimalRegex = /([.])\w+/g ;
+	var currentValue = display.value;
+	if (decimalRegex.test(display.value)){
+		var decimal = currentValue.match(decimalRegex)[0];
+		if(decimal.length >= 7){
+			var decimalCutOff = (parseFloat(display.value)).toFixed(6); 
+			display.value = decimalCutOff;
+		}
 	}
 });
