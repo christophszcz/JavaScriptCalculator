@@ -482,13 +482,16 @@ clear.addEventListener('click', function(){
 /* Equals */
 
 equals.addEventListener('click', function (){
-	var multipleDigits = tempArray.join('');
-	// var trueNum = parseInt(multipleDigits);
-	var trueNum = parseFloat(multipleDigits);
-	array.push(trueNum);
-	tempArray = [];
-	display.value = "";
 
+	if (tempArray.length >= 1){
+		var multipleDigits = tempArray.join('');
+		// var trueNum = parseInt(multipleDigits);
+		var trueNum = parseFloat(multipleDigits);
+		array.push(trueNum);
+		tempArray = [];
+		display.value = "";
+	}
+	
 	if (additionFunction.called ){
 		sum = array.reduce(add, 0);  
 		function add(a, b) {     
@@ -539,16 +542,18 @@ equals.addEventListener('click', function (){
 		array = [];
 		array.push(quotient);
 		quotient = undefined;
-	}
-
-	var decimalRegex = /([.])\w+/g;
-	if(decimalRegex.exec(display.value)[0].length >= 7){
-		var decimalCutOff = (parseFloat(display.value)).toFixed(7); 
-		display.value = decimalCutOff;
+	} else {
+		display.value = array[0];
 	}
 
 	additionFunction.called = false;
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
 	divisionFunction.called = false;
+
+	var decimalRegex = /([.])\w+/g;
+	if(decimalRegex.exec(display.value)[0].length >= 7){
+		var decimalCutOff = (parseFloat(display.value)).toFixed(6); 
+		display.value = decimalCutOff;
+	}
 });
