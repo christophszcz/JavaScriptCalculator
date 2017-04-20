@@ -149,6 +149,7 @@ var multiplication = document.getElementById('multiplication');
 var division = document.getElementById('division');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
+var clearLast = document.getElementById('last-clear');
 
 /* Addition */
 
@@ -463,6 +464,23 @@ function divisionFunction(){
 }
 
 division.addEventListener('click', divisionFunction);
+
+/* Clear Last */
+
+clearLast.addEventListener('click', function (){
+	if (tempArray.length >= 1){
+		tempArray = [];
+		display.value = "0";
+	} else if (additionFunction.called === true || subtractionFunction.called === true || multiplicationFunction.called === true || divisionFunction.called === true){
+		additionFunction.called = false;
+		subtractionFunction.called = false;
+		multiplicationFunction.called = false;
+		divisionFunction.called = false;
+	} else{
+		array = [];
+		display.value = "0";
+	} 
+});  
 
 /* Clear */ 
 

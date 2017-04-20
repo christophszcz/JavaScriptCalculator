@@ -15,6 +15,7 @@ body{
   width: 324px;
   height: 510px;
   border-radius: 150%/100px 100px 0 0;
+  margin-top: 10px;
 }
 
 .bottom-box{
