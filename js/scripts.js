@@ -541,6 +541,12 @@ equals.addEventListener('click', function (){
 		quotient = undefined;
 	}
 
+	var decimalRegex = /([.])\w+/g;
+	if(decimalRegex.exec(display.value)[0].length >= 7){
+		var decimalCutOff = (parseFloat(display.value)).toFixed(7); 
+		display.value = decimalCutOff;
+	}
+
 	additionFunction.called = false;
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
