@@ -144,3 +144,15 @@ form{
  font-family:'digital';
  src: url('../fonts/digital.ttf');
 }
+
+/* Mobile Viewing */
+
+@media (max-width: 500px){
+  .box{
+    width: 243px;
+    height: 383px;
+  }
+  .bottom-box{
+    width: 243px;
+  }
+}
