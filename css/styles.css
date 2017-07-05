@@ -1,10 +1,17 @@
-body{
-	background-color: #CCCCCC;
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #CCCCCC;
 }
 
 .container{
-	display: flex;
-	justify-content: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box{
