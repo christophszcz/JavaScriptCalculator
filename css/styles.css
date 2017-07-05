@@ -150,9 +150,54 @@ form{
 @media (max-width: 500px){
   .box{
     width: 243px;
-    height: 383px;
+    height: 382.5px;
   }
   .bottom-box{
     width: 243px;
+    height: 22.5px;
+  }
+  .cells{
+    width: 52.5px;
+  }
+  .solar-cell{
+    height: 15px;
+  }
+  .big-title{
+    font-size: 22.5px;
+  }
+  .blue-box{
+    height: 150px;
+    width: 213.75px;
+    border-radius: 150%/100px 100px 0 0;
+    top: 15px;
+  }
+
+  .btn{
+    padding: 9px 18px 9px 18px;
+    margin: 3.75px;
+  }
+  #zero {
+    padding-left: 45.75px;
+    padding-right: 45.75px;
+    margin-right: 4.5px;
+  }
+  #clear {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+  }
+  #clear {
+    padding-left: 13.5px;
+    padding-right: 13.5px;
+  }
+  #last-clear{
+    padding: 9px 15px 7.5px 15px;
+  }
+  #subtraction {
+    padding: 9px 18.75px 9px 18.75px;
+  }
+  .all-buttons{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 30px;
   }
 }
