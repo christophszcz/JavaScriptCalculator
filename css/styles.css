@@ -159,7 +159,7 @@ form{
     width: 243px;
     height: 382.5px;
     box-shadow: 10px 10px 5px #888888;
-    border-radius: 150%/75px 75px 0 0;
+    border-radius: 150%/100px 100px 0 0;
     margin-top: 7.5px;
   }
 
@@ -196,8 +196,9 @@ form{
   }
 
   .blue-box{
+    margin-right: 20px;
     height: 150px;
-    width: 213.75px;
+    width: 203px;
     border-radius: 150%/100px 100px 0 0;
     top: 15px;
   }
