@@ -1,3 +1,12 @@
+/*Fonts */
+
+@font-face{
+  font-family:'digital';
+  src: url('../fonts/digital.ttf');
+}
+
+/* Entire Page */
+
 html, body {
   height: 100%;
 }
@@ -145,11 +154,6 @@ form{
 .bottom-buttons{
 	position: relative;
 	bottom: 57px;
-}
-
-@font-face{
- font-family:'digital';
- src: url('../fonts/digital.ttf');
 }
 
 /* Mobile Viewing */
