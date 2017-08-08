@@ -33,8 +33,7 @@ var decimal = document.getElementById('decimal');
 var subtraction = document.getElementById('subtraction');
 
 subtraction.addEventListener('click', function(){
-	if (tempArray.length < 1){
-		subtractionFunction.called = false;
+	if (tempArray.length < 1 && array.length < 1){
 		maxNumbers();
 		if (full === true){
 			return;
@@ -254,81 +253,81 @@ addition.addEventListener('click', additionFunction);
 /* Subtraction */
 
 function subtractionFunction(){
-	if (tempArray.length < 1){
+	if (tempArray.length < 1 && array.length < 1 && Math.sign(array[0]) !== -1 ){
 		return;
-	} else if (tempArray.length > 1){
+	} else if (tempArray.length > 1 || array.length >= 1 || Math.sign(tempArray[0]) === 1) {
+		console.log('works');
 		subtractionFunction.called = true;
-	if (additionFunction.called ){
-		var multipleDigits = tempArray.join('');
-		var trueNum = parseFloat(multipleDigits);
-		array.push(trueNum);
-		tempArray = [];
+		if (additionFunction.called ){
+			var multipleDigits = tempArray.join('');
+			var trueNum = parseFloat(multipleDigits);
+			array.push(trueNum);
+			tempArray = [];
 
-		sum = array.reduce(add, 0);  
-		function add(a, b) {     
-			return a + b; 
-		}  
-		console.log(sum);
-		array = [];
-		array.push(sum);
-		additionFunction.called = false;
-		sum = undefined;
-	}
+			sum = array.reduce(add, 0);  
+			function add(a, b) {     
+				return a + b; 
+			}  
+			console.log(sum);
+			array = [];
+			array.push(sum);
+			additionFunction.called = false;
+			sum = undefined;
+		}
 
-	if (multiplicationFunction.called){
-		var multipleDigits = tempArray.join('');
-		var trueNum = parseFloat(multipleDigits);
-		array.push(trueNum);
-		tempArray = [];
-		display.value = "";
+		if (multiplicationFunction.called){
+			var multipleDigits = tempArray.join('');
+			var trueNum = parseFloat(multipleDigits);
+			array.push(trueNum);
+			tempArray = [];
+			display.value = "";
 
-		product = array.reduce(multiply);  
-		function multiply(c, d) {     
-			return c * d; 
-		}  
-		console.log(product);
-		display.value = product;
-		array = [];
-		array.push(product);
-		multiplicationFunction.called = false;
-		product = undefined;
-	}
+			product = array.reduce(multiply);  
+			function multiply(c, d) {     
+				return c * d; 
+			}  
+			console.log(product);
+			display.value = product;
+			array = [];
+			array.push(product);
+			multiplicationFunction.called = false;
+			product = undefined;
+		}
 
-	if (divisionFunction.called ){
-		var multipleDigits = tempArray.join('');
-		var trueNum = parseFloat(multipleDigits);
-		array.push(trueNum);
-		tempArray = [];
-		display.value = "";
-		quotient = array.reduce(divide);  
-		function divide(e, f) {
-			if (f === 0){
-				return 'UNDEFINED';
-			} else{
-				return e / f; 
-			}
-		}  
-		console.log(quotient);
-		display.value = quotient;
-		array = [];
-		array.push(quotient);
-		divisionFunction.called = false;
-		quotient = undefined;
-	}
+		if (divisionFunction.called ){
+			var multipleDigits = tempArray.join('');
+			var trueNum = parseFloat(multipleDigits);
+			array.push(trueNum);
+			tempArray = [];
+			display.value = "";
+			quotient = array.reduce(divide);  
+			function divide(e, f) {
+				if (f === 0){
+					return 'UNDEFINED';
+				} else{
+					return e / f; 
+				}
+			}  
+			console.log(quotient);
+			display.value = quotient;
+			array = [];
+			array.push(quotient);
+			divisionFunction.called = false;
+			quotient = undefined;
+		}
 
-	if (tempArray.length >= 1){
-    var multipleDigits = tempArray.join('');
-		// var trueNum = parseInt(multipleDigits);
-		var trueNum = parseFloat(multipleDigits);
-		array.push(trueNum);
-		tempArray = [];
-		full = false;
-	} else if (typeof difference !== 'undefined'){
-		array = [];
-		array.push(difference);
-	}
-	}
-	 
+		if (tempArray.length >= 1){
+	    var multipleDigits = tempArray.join('');
+			// var trueNum = parseInt(multipleDigits);
+			var trueNum = parseFloat(multipleDigits);
+			array.push(trueNum);
+			tempArray = [];
+			full = false;
+		} else if (typeof difference !== 'undefined'){
+			array = [];
+			array.push(difference);
+		}
+	}	 
 }
 
 subtraction.addEventListener('click', subtractionFunction);
