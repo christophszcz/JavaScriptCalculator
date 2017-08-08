@@ -32,15 +32,19 @@ var nine = document.getElementById('nine');
 var decimal = document.getElementById('decimal');
 var subtraction = document.getElementById('subtraction');
 
-// subtraction.addEventListener('click', function(){
-// 	subtractionFunction.called = false;
-// 	maxNumbers();
-// 	if (full === true){
-// 		return;
-// 	}
-// 	tempArray.push('-');
-// 	display.value = tempArray.join('');
-// });
+subtraction.addEventListener('click', function(){
+	if (tempArray.length < 1){
+		subtractionFunction.called = false;
+		maxNumbers();
+		if (full === true){
+			return;
+		}
+		tempArray.push('-');
+		display.value = tempArray.join('');
+		display.style.direction = 'ltr';
+		display.style.textAlign = 'right';	
+	}
+});
 
 zero.addEventListener('click', function(){
 	maxNumbers();
@@ -250,7 +254,10 @@ addition.addEventListener('click', additionFunction);
 /* Subtraction */
 
 function subtractionFunction(){
-	subtractionFunction.called = true;
+	if (tempArray.length < 1){
+		return;
+	} else if (tempArray.length > 1){
+		subtractionFunction.called = true;
 	if (additionFunction.called ){
 		var multipleDigits = tempArray.join('');
 		var trueNum = parseFloat(multipleDigits);
@@ -320,6 +327,8 @@ function subtractionFunction(){
 		array = [];
 		array.push(difference);
 	}
+	}
+	 
 }
 
 subtraction.addEventListener('click', subtractionFunction);
