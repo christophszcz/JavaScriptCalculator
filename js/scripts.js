@@ -17,7 +17,7 @@ function removeZero(){
 	}  
 }
 
-/* Numbers */
+/* Numbers, Decimal & Negative Symbol */
 
 var zero  = document.getElementById('zero');
 var one = document.getElementById('one');
@@ -30,6 +30,17 @@ var seven = document.getElementById('seven');
 var eight = document.getElementById('eight');
 var nine = document.getElementById('nine');
 var decimal = document.getElementById('decimal');
+var subtraction = document.getElementById('subtraction');
+
+// subtraction.addEventListener('click', function(){
+// 	subtractionFunction.called = false;
+// 	maxNumbers();
+// 	if (full === true){
+// 		return;
+// 	}
+// 	tempArray.push('-');
+// 	display.value = tempArray.join('');
+// });
 
 zero.addEventListener('click', function(){
 	maxNumbers();
@@ -144,7 +155,7 @@ decimal.addEventListener('click', function(){
 
 /* Operations */
 var addition = document.getElementById('addition');
-var subtraction = document.getElementById('subtraction');
+// var subtraction = document.getElementById('subtraction');
 var multiplication = document.getElementById('multiplication');
 var division = document.getElementById('division');
 var equals = document.getElementById('equals');
