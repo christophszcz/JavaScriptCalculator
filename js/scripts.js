@@ -147,7 +147,8 @@ decimal.addEventListener('click', function(){
 	if (full === true){
 		return;
 	}
-	if (tempArray[tempArray.length - 1] !== '.'){
+	var stringCheck = tempArray.join('');
+	if (stringCheck.search(/[.]/g) < 1){
 		tempArray.push('.');
 	}
 	display.value = tempArray.join('');
