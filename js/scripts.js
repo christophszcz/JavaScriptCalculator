@@ -146,8 +146,10 @@ decimal.addEventListener('click', function(){
 	maxNumbers();
 	if (full === true){
 		return;
-	} 
-	tempArray.push('.');
+	}
+	if (tempArray[tempArray.length - 1] !== '.'){
+		tempArray.push('.');
+	}
 	display.value = tempArray.join('');
 	display.style.direction = 'ltr';
 	display.style.textAlign = 'right';
