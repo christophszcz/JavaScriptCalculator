@@ -51,8 +51,12 @@ zero.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	tempArray.push(0);
-	display.value = tempArray.join('');
+	if (tempArray[0] === 0){
+		return;
+	} else{
+		tempArray.push(0);
+		display.value = tempArray.join('');
+	}
 });
 
 one.addEventListener('click', function(){
