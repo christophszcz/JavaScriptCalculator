@@ -12,9 +12,9 @@ function maxNumbers(){
 /* Remove Zero */
 
 function removeZero(){
-	if (array[0] === 0){
-		array.splice(0,1);
-	}
+	// if (array[0] === 0){
+	// 	array.splice(0,1);
+	// }
 	if (tempArray[0] === 0 && tempArray[1] !== '.'){
 		tempArray.splice(0,1);
 	}
@@ -262,7 +262,7 @@ addition.addEventListener('click', additionFunction);
 function subtractionFunction(){
 	if (tempArray.length < 1 && array.length < 1 && Math.sign(array[0]) !== -1 ){
 		return;
-	} else if (tempArray.length > 1 || array.length >= 1 || Math.sign(tempArray[0]) === 1) {
+	} else if (tempArray.length > 1 || array.length >= 1 || Math.sign(tempArray[0]) === 1 || tempArray[0] === 0) {
 		subtractionFunction.called = true;
 		if (additionFunction.called ){
 			var multipleDigits = tempArray.join('');
