@@ -14,7 +14,10 @@ function maxNumbers(){
 function removeZero(){
 	if (array[0] === 0){
 		array.splice(0,1);
-	}  
+	}
+	if (tempArray[0] === 0 && tempArray[1] !== '.'){
+		tempArray.splice(0,1);
+	}
 }
 
 /* Numbers, Decimal & Negative Symbol */
@@ -38,6 +41,7 @@ subtraction.addEventListener('click', function(){
 		if (full === true){
 			return;
 		}
+		removeZero();
 		tempArray.push('-');
 		display.value = tempArray.join('');
 		display.style.direction = 'ltr';
@@ -51,12 +55,8 @@ zero.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	if (display.value === '0'){
-		return;
-	} else {
-		tempArray.push(0);
-		display.value = tempArray.join('');
-	}
+	tempArray.push(0);
+	display.value = tempArray.join('');
 });
 
 one.addEventListener('click', function(){
@@ -263,7 +263,6 @@ function subtractionFunction(){
 	if (tempArray.length < 1 && array.length < 1 && Math.sign(array[0]) !== -1 ){
 		return;
 	} else if (tempArray.length > 1 || array.length >= 1 || Math.sign(tempArray[0]) === 1) {
-		console.log('works');
 		subtractionFunction.called = true;
 		if (additionFunction.called ){
 			var multipleDigits = tempArray.join('');
