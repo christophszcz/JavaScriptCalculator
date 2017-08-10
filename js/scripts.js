@@ -51,9 +51,9 @@ zero.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	if (tempArray[0] === 0){
+	if (display.value === '0'){
 		return;
-	} else{
+	} else {
 		tempArray.push(0);
 		display.value = tempArray.join('');
 	}
@@ -155,7 +155,10 @@ decimal.addEventListener('click', function(){
 		return;
 	}
 	var stringCheck = tempArray.join('');
-	if (stringCheck.search(/[.]/g) < 1){
+	if (display.value === '0' && tempArray[0] !== 0){
+		tempArray.push(0);
+		tempArray.push('.');
+	} else if (stringCheck.search(/[.]/g) < 1){
 		tempArray.push('.');
 	}
 	display.value = tempArray.join('');
