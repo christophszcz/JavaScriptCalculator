@@ -150,12 +150,17 @@ nine.addEventListener('click', function(){
 });
 
 decimal.addEventListener('click', function(){
+	console.log(true);
 	maxNumbers();
 	if (full === true){
 		return;
 	}
 	var stringCheck = tempArray.join('');
 	if (display.value === '0' && tempArray[0] !== 0){
+		tempArray.push(0);
+		tempArray.push('.');
+	} else if (tempArray[0] === '.' && array.length >= 1){
+		tempArray = [];
 		tempArray.push(0);
 		tempArray.push('.');
 	} else if (stringCheck.search(/[.]/g) < 1){
