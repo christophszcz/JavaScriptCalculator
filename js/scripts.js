@@ -436,6 +436,10 @@ multiplication.addEventListener('click', multiplicationFunction);
 /* Division */
 
 function divisionFunction(){
+	additionFunction.called = false;
+	subtractionFunction.called = false;
+	multiplicationFunction.called = false;
+
 	divisionFunction.called = true;
 	if (additionFunction.called ){
 		var multipleDigits = tempArray.join('');
