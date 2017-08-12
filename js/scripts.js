@@ -2,10 +2,20 @@ var tempArray = [], array = [];
 var display = document.getElementById('display');
 display.value = "0";
 var full = false;
+var equalsFunctionCalled = false;
 
 function maxNumbers(){
 	if(tempArray.length > 7){
 		full = true;
+	}
+}
+
+/* New Operation */
+
+function newOperation(){
+	if (equalsFunctionCalled){
+		tempArray = [];
+		array = [];
 	}
 }
 
@@ -42,6 +52,7 @@ subtraction.addEventListener('click', function(){
 			return;
 		}
 		removeZero();
+		newOperation();
 		tempArray.push('-');
 		display.value = tempArray.join('');
 		display.style.direction = 'ltr';
@@ -55,6 +66,7 @@ zero.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newOperation();
 	tempArray.push(0);
 	display.value = tempArray.join('');
 });
@@ -65,6 +77,7 @@ one.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newOperation();
 	tempArray.push(1);
 	display.value = tempArray.join('');
 });
@@ -75,6 +88,7 @@ two.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newOperation();
 	tempArray.push(2);
 	display.value = tempArray.join('');
 });
@@ -85,6 +99,7 @@ three.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newOperation();
 	tempArray.push(3);
 	display.value = tempArray.join('');
 });
@@ -547,7 +562,8 @@ clear.addEventListener('click', function(){
 
 /* Equals */
 
-equals.addEventListener('click', function (){
+equals.addEventListener('click', function equalsFunction(){
+	equalsFunctionCalled = true;
 
 	if (tempArray.length >= 1){
 		var multipleDigits = tempArray.join('');
