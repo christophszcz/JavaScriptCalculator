@@ -271,6 +271,10 @@ function subtractionFunction(){
 	if (tempArray.length < 1 && array.length < 1 && Math.sign(array[0]) !== -1 ){
 		return;
 	} else if (tempArray.length > 1 || array.length >= 1 || Math.sign(tempArray[0]) === 1 || tempArray[0] === 0) {
+		additionFunction.called = false;
+		multiplicationFunction.called = false;
+		divisionFunction.called = false;
+
 		subtractionFunction.called = true;
 		if (additionFunction.called ){
 			var multipleDigits = tempArray.join('');
