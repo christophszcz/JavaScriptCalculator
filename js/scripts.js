@@ -353,6 +353,10 @@ subtraction.addEventListener('click', subtractionFunction);
 /* Multiplication */
 
 function multiplicationFunction(){
+	additionFunction.called = false;
+	subtractionFunction.called = false;
+	divisionFunction.called = false;
+
 	multiplicationFunction.called = true;
 	if (additionFunction.called ){
 		var multipleDigits = tempArray.join('');
