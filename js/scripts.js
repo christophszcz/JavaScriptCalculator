@@ -150,7 +150,6 @@ nine.addEventListener('click', function(){
 });
 
 decimal.addEventListener('click', function(){
-	console.log(true);
 	maxNumbers();
 	if (full === true){
 		return;
@@ -159,7 +158,7 @@ decimal.addEventListener('click', function(){
 	if (display.value === '0' && tempArray[0] !== 0){
 		tempArray.push(0);
 		tempArray.push('.');
-	} else if (tempArray[0] === '.' && array.length >= 1){
+	} else if (tempArray.length < 1 && array.length >= 1){
 		tempArray = [];
 		tempArray.push(0);
 		tempArray.push('.');
