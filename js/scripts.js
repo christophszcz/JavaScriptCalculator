@@ -182,6 +182,10 @@ var clearLast = document.getElementById('last-clear');
 /* Addition */
 
 function additionFunction(){
+	subtractionFunction.called = false;
+	multiplicationFunction.called = false;
+	divisionFunction.called = false;
+
 	additionFunction.called = true;
 	if (subtractionFunction.called){
 		var multipleDigits = tempArray.join('');
