@@ -12,19 +12,17 @@ function maxNumbers(){
 
 /* New Operation */
 
-function newOperation(){
-	if (equalsFunctionCalled){
+function newExpression(){
+	if (equalsFunctionCalled  && array.length >= 1){
 		tempArray = [];
 		array = [];
 	}
+	equalsFunctionCalled = false;
 }
 
 /* Remove Zero */
 
 function removeZero(){
-	// if (array[0] === 0){
-	// 	array.splice(0,1);
-	// }
 	if (tempArray[0] === 0 && tempArray[1] !== '.'){
 		tempArray.splice(0,1);
 	}
@@ -52,7 +50,7 @@ subtraction.addEventListener('click', function(){
 			return;
 		}
 		removeZero();
-		newOperation();
+		newExpression();
 		tempArray.push('-');
 		display.value = tempArray.join('');
 		display.style.direction = 'ltr';
@@ -66,7 +64,7 @@ zero.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	newOperation();
+	newExpression();
 	tempArray.push(0);
 	display.value = tempArray.join('');
 });
@@ -77,7 +75,7 @@ one.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	newOperation();
+	newExpression();
 	tempArray.push(1);
 	display.value = tempArray.join('');
 });
@@ -88,7 +86,7 @@ two.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	newOperation();
+	newExpression();
 	tempArray.push(2);
 	display.value = tempArray.join('');
 });
@@ -99,7 +97,7 @@ three.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
-	newOperation();
+	newExpression();
 	tempArray.push(3);
 	display.value = tempArray.join('');
 });
@@ -110,6 +108,7 @@ four.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newExpression();
 	tempArray.push(4);
 	display.value = tempArray.join('');
 });
@@ -120,6 +119,7 @@ five.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newExpression();
 	tempArray.push(5);
 	display.value = tempArray.join('');
 });
@@ -130,6 +130,7 @@ six.addEventListener('click', function(){
 		return;
 	}
 	removeZero();
+	newExpression();
 	tempArray.push(6);
 	display.value = tempArray.join('');
 });
@@ -140,6 +141,7 @@ seven.addEventListener('click', function(){
 		return;
 	} 
 	removeZero();
+	newExpression();
 	tempArray.push(7);
 	display.value = tempArray.join('');
 });
@@ -150,6 +152,7 @@ eight.addEventListener('click', function(){
 		return;
 	} 
 	removeZero();
+	newExpression();
 	tempArray.push(8);
 	display.value = tempArray.join('');
 });
@@ -160,6 +163,7 @@ nine.addEventListener('click', function(){
 		return;
 	} 
 	removeZero();
+	newExpression();
 	tempArray.push(9);
 	display.value = tempArray.join('');
 });
@@ -180,6 +184,7 @@ decimal.addEventListener('click', function(){
 	} else if (stringCheck.search(/[.]/g) < 1){
 		tempArray.push('.');
 	}
+	newExpression();
 	display.value = tempArray.join('');
 	display.style.direction = 'ltr';
 	display.style.textAlign = 'right';
@@ -200,6 +205,8 @@ function additionFunction(){
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
 	divisionFunction.called = false;
+
+	var equalsFunctionCalled = false;
 
 	additionFunction.called = true;
 	if (subtractionFunction.called){
@@ -290,6 +297,8 @@ function subtractionFunction(){
 		multiplicationFunction.called = false;
 		divisionFunction.called = false;
 
+		var equalsFunctionCalled = false;
+
 		subtractionFunction.called = true;
 		if (additionFunction.called ){
 			var multipleDigits = tempArray.join('');
@@ -371,6 +380,8 @@ function multiplicationFunction(){
 	additionFunction.called = false;
 	subtractionFunction.called = false;
 	divisionFunction.called = false;
+
+	var equalsFunctionCalled = false;
 
 	multiplicationFunction.called = true;
 	if (additionFunction.called ){
@@ -454,6 +465,8 @@ function divisionFunction(){
 	additionFunction.called = false;
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
+
+	var equalsFunctionCalled = false;
 
 	divisionFunction.called = true;
 	if (additionFunction.called ){
