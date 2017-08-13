@@ -552,6 +552,7 @@ clearLast.addEventListener('click', function (){
 		subtractionFunction.called = false;
 		multiplicationFunction.called = false;
 		divisionFunction.called = false;
+		equalsFunctionCalled = false;
 	} else{
 		array = [];
 		display.value = "0";
@@ -571,6 +572,7 @@ clear.addEventListener('click', function(){
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
 	divisionFunction.called = false;
+	equalsFunctionCalled = false;
 });
 
 /* Equals */
