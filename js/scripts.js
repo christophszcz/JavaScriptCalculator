@@ -202,10 +202,12 @@ var clearLast = document.getElementById('last-clear');
 /* Addition */
 
 function additionFunction(){
-	// subtractionFunction.called = false;
-	// multiplicationFunction.called = false;
-	// divisionFunction.called = false;
-
+	if (array.length >= 1 && tempArray.length < 1){
+		subtractionFunction.called = false;
+		multiplicationFunction.called = false;
+		divisionFunction.called = false;
+	}
+ 
 	var equalsFunctionCalled = false;
 
 	additionFunction.called = true;
@@ -293,9 +295,11 @@ function subtractionFunction(){
 	if (tempArray.length < 1 && array.length < 1 && Math.sign(array[0]) !== -1 ){
 		return;
 	} else if (tempArray.length > 1 || array.length >= 1 || Math.sign(tempArray[0]) === 1 || tempArray[0] === 0) {
-		// additionFunction.called = false;
-		// multiplicationFunction.called = false;
-		// divisionFunction.called = false;
+		if (array.length >= 1 && tempArray.length < 1){
+			additionFunction.called = false;
+			multiplicationFunction.called = false;
+			divisionFunction.called = false;
+		}
 
 		var equalsFunctionCalled = false;
 
@@ -377,9 +381,9 @@ subtraction.addEventListener('click', subtractionFunction);
 /* Multiplication */
 
 function multiplicationFunction(){
-	// additionFunction.called = false;
-	// subtractionFunction.called = false;
-	// divisionFunction.called = false;
+	additionFunction.called = false;
+	subtractionFunction.called = false;
+	divisionFunction.called = false;
 
 	var equalsFunctionCalled = false;
 
@@ -462,9 +466,9 @@ multiplication.addEventListener('click', multiplicationFunction);
 /* Division */
 
 function divisionFunction(){
-	// additionFunction.called = false;
-	// subtractionFunction.called = false;
-	// multiplicationFunction.called = false;
+	additionFunction.called = false;
+	subtractionFunction.called = false;
+	multiplicationFunction.called = false;
 
 	var equalsFunctionCalled = false;
 
@@ -552,7 +556,6 @@ clearLast.addEventListener('click', function (){
 		subtractionFunction.called = false;
 		multiplicationFunction.called = false;
 		divisionFunction.called = false;
-		equalsFunctionCalled = false;
 	} else{
 		array = [];
 		display.value = "0";
