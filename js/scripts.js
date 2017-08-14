@@ -381,9 +381,11 @@ subtraction.addEventListener('click', subtractionFunction);
 /* Multiplication */
 
 function multiplicationFunction(){
-	additionFunction.called = false;
-	subtractionFunction.called = false;
-	divisionFunction.called = false;
+	if (array.length >= 1 && tempArray.length < 1){
+		additionFunction.called = false;
+		subtractionFunction.called = false;
+		divisionFunction.called = false;
+	}
 
 	var equalsFunctionCalled = false;
 
@@ -466,9 +468,11 @@ multiplication.addEventListener('click', multiplicationFunction);
 /* Division */
 
 function divisionFunction(){
-	additionFunction.called = false;
-	subtractionFunction.called = false;
-	multiplicationFunction.called = false;
+	if (array.length >= 1 && tempArray.length < 1){
+		additionFunction.called = false;
+		subtractionFunction.called = false;
+		multiplicationFunction.called = false;
+	}
 
 	var equalsFunctionCalled = false;
 
