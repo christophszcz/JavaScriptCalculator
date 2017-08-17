@@ -13,7 +13,7 @@ function maxNumbers(){
 /* New Operation */
 
 function newExpression(){
-	if (equalsFunctionCalled  && array.length >= 1){
+	if (equalsFunctionCalled  && array.length >= 1 && additionFunction.called === false){
 		tempArray = [];
 		array = [];
 	}
