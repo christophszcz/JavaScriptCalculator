@@ -473,4 +473,8 @@ equals.addEventListener('click', function equalsFunction(){
 			display.value = decimalCutOff;
 		}
 	}
+	if (currentValue > 9999999){
+		var scientificNot = Number(currentValue).toExponential(4);
+		display.value = scientificNot;
+	}
 });
