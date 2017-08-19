@@ -262,8 +262,17 @@ form{
 /* Dev Info */
 
 .dev-info{
+  font-family: 'Saira Semi Condensed', sans-serif;
   font-size: 14px;
   text-align: right;
   position: relative;
   bottom: 25px;
+  right: 10px;
+  color: #344556;
+}
+
+#website-link{
+  font-weight: 700;
+  text-decoration: none;
+  color: #344556;
 }
