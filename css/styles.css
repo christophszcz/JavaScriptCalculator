@@ -276,3 +276,11 @@ form{
   text-decoration: none;
   color: #344556;
 }
+
+/* Dev Info Responsiveness */
+
+@media( min-width: 500px) and (max-width: 700px){
+  .dev-info{
+    bottom: 20px;
+  }
+}
