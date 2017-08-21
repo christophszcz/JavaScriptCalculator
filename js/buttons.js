@@ -1,4 +1,4 @@
-var tempArray = [], array = [];
+var tempArray = [], array = []; 
 var display = document.getElementById('display');
 display.value = "0";
 var full = false;

@@ -476,11 +476,11 @@ equals.addEventListener('click', function equalsFunction(){
 	if (currentValue > 9999999){
 		var scientificNot = Number(currentValue).toExponential();
 		console.log(scientificNot);
-		var numWZerosRemoved = scientificNot.toString();
+		numWZerosRemoved = scientificNot.toString();
 		display.value = numWZerosRemoved;
-	}
-	if (numWZerosRemoved.length > 8){
-		var changeBackToNum = Number(numWZerosRemoved);
-		display.value = changeBackToNum.toExponential(3);
+		if (numWZerosRemoved.length > 8){
+			var changeBackToNum = Number(numWZerosRemoved);
+			display.value = changeBackToNum.toExponential(3);
+		}
 	}
 });
