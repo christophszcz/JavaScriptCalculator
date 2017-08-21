@@ -474,7 +474,8 @@ equals.addEventListener('click', function equalsFunction(){
 		}
 	}
 	if (currentValue > 9999999){
-		var scientificNot = Number(currentValue).toExponential(4);
-		display.value = scientificNot;
+		var scientificNot = Number(currentValue).toExponential();
+		var numWZerosRemoved = scientificNot.toString();
+		display.value = numWZerosRemoved;
 	}
 });
