@@ -463,6 +463,7 @@ equals.addEventListener('click', function equalsFunction(){
 	subtractionFunction.called = false;
 	multiplicationFunction.called = false;
 	divisionFunction.called = false;
+	full = false;
 
 	var decimalRegex = /([.])\w+/g ;
 	var currentValue = display.value;
