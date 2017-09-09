@@ -11,7 +11,7 @@ function maxNumbers(){
 }
 
 window.addEventListener('keydown', function(e){
-	console.log(e.keyCode);
+	console.log(e.key);
 });
 
 /* New Operation */
