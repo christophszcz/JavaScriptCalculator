@@ -10,10 +10,6 @@ function maxNumbers(){
 	}
 }
 
-window.addEventListener('keydown', function(e){
-	console.log(e.key);
-});
-
 /* New Operation */
 
 function newExpression(){
