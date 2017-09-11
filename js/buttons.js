@@ -69,7 +69,7 @@ zero.addEventListener('click', function(){
 	display.value = tempArray.join('');
 });
 
-one.addEventListener('click', function(e){
+one.addEventListener('click', function(){
 	maxNumbers();
 	if (full === true){
 		return;
@@ -81,7 +81,7 @@ one.addEventListener('click', function(e){
 	display.value = tempArray.join('');
 });
 
-two.addEventListener('click', function(e){
+two.addEventListener('click', function(){
 	maxNumbers();
 	if (full === true){
 		return;
