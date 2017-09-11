@@ -69,25 +69,27 @@ zero.addEventListener('click', function(){
 	display.value = tempArray.join('');
 });
 
-one.addEventListener('click', function(){
+one.addEventListener('click', function(e){
 	maxNumbers();
 	if (full === true){
 		return;
 	}
 	removeZero();
 	newExpression();
-	tempArray.push(1);
+	tempArray.push(this.getAttribute("data-value"));
+	console.log(this.getAttribute("data-value"));
 	display.value = tempArray.join('');
 });
 
-two.addEventListener('click', function(){
+two.addEventListener('click', function(e){
 	maxNumbers();
 	if (full === true){
 		return;
 	}
 	removeZero();
 	newExpression();
-	tempArray.push(2);
+	tempArray.push(this.getAttribute("data-value"));
+	console.log(this.getAttribute("data-value"));
 	display.value = tempArray.join('');
 });
 

@@ -3,8 +3,10 @@ window.addEventListener('keydown', function(e){
 	if (!button) return;
 	button.classList.add('focus');
 	console.log(button);
-	tempArray.push(e.key);
-	display.value = tempArray.join('');
+	// if () { 
+	// 	tempArray.push(e.key);
+	// 	display.value = tempArray.join('');
+	//  }
 });
 
 function removeTransition(e){
