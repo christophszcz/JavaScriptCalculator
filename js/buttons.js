@@ -58,30 +58,18 @@ subtraction.addEventListener('click', function(){
 	}
 });
 
-zero.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	}
-	removeZero();
-	newExpression();
-	tempArray.push(0);
-	display.value = tempArray.join('');
-});
+zero.addEventListener('click', numberActions);
+one.addEventListener('click', numberActions);
+two.addEventListener('click', numberActions);
+three.addEventListener('click', numberActions);
+four.addEventListener('click', numberActions);
+five.addEventListener('click', numberActions);
+six.addEventListener('click', numberActions);
+seven.addEventListener('click', numberActions);
+eight.addEventListener('click', numberActions);
+nine.addEventListener('click', numberActions);
 
-one.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	}
-	removeZero();
-	newExpression();
-	tempArray.push(this.getAttribute("data-value"));
-	console.log(this.getAttribute("data-value"));
-	display.value = tempArray.join('');
-});
-
-two.addEventListener('click', function(){
+function numberActions(){
 	maxNumbers();
 	if (full === true){
 		return;
@@ -91,84 +79,7 @@ two.addEventListener('click', function(){
 	tempArray.push(this.getAttribute("data-value"));
 	console.log(this.getAttribute("data-value"));
 	display.value = tempArray.join('');
-});
-
-three.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	}
-	removeZero();
-	newExpression();
-	tempArray.push(3);
-	display.value = tempArray.join('');
-});
-
-four.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	}
-	removeZero();
-	newExpression();
-	tempArray.push(4);
-	display.value = tempArray.join('');
-});
-
-five.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	}
-	removeZero();
-	newExpression();
-	tempArray.push(5);
-	display.value = tempArray.join('');
-});
-
-six.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	}
-	removeZero();
-	newExpression();
-	tempArray.push(6);
-	display.value = tempArray.join('');
-});
-
-seven.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	} 
-	removeZero();
-	newExpression();
-	tempArray.push(7);
-	display.value = tempArray.join('');
-});
-
-eight.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	} 
-	removeZero();
-	newExpression();
-	tempArray.push(8);
-	display.value = tempArray.join('');
-});
-
-nine.addEventListener('click', function(){
-	maxNumbers();
-	if (full === true){
-		return;
-	} 
-	removeZero();
-	newExpression();
-	tempArray.push(9);
-	display.value = tempArray.join('');
-});
+};
 
 decimal.addEventListener('click', function(){
 	maxNumbers();
