@@ -2,10 +2,12 @@ window.addEventListener('keydown', function(e){
 	const button = document.querySelector(`.btn[data-key="${e.keyCode}"`);
 	if (!button) return;
 	button.classList.toggle('focus');
-	// if (e.key.isNaN !== false || e.key === '.' ) { 
-		tempArray.push(e.key);
+	if (isNaN(e.key) === false){
+		tempArray.push(Number(e.key));
 		display.value = tempArray.join('');
-	// }
+	}else{
+		decimalActions();
+	} 
 });
 
 function removeTransition(e){

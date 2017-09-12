@@ -81,7 +81,9 @@ function numberActions(){
 	display.value = tempArray.join('');
 };
 
-decimal.addEventListener('click', function(){
+decimal.addEventListener('click', decimalActions);
+
+function decimalActions(){
 	maxNumbers();
 	if (full === true){
 		return;
@@ -101,4 +103,4 @@ decimal.addEventListener('click', function(){
 	display.value = tempArray.join('');
 	display.style.direction = 'ltr';
 	display.style.textAlign = 'right';
-});
+};
