@@ -10,7 +10,7 @@ function maxNumbers(){
 	}
 }
 
-/* New Operation */
+// New Operation 
 
 function newExpression(){
 	if (equalsFunctionCalled && array.length >= 1 && additionFunction.called === false && subtractionFunction.called === false && multiplicationFunction.called === false && divisionFunction.called === false){
@@ -20,7 +20,7 @@ function newExpression(){
 	equalsFunctionCalled = false;
 }
 
-/* Remove Zero */
+// Remove Zero 
 
 function removeZero(){
 	if (tempArray[0] === 0 && tempArray[1] !== '.'){
@@ -28,7 +28,7 @@ function removeZero(){
 	}
 }
 
-/* Numbers, Decimal & Negative Symbol */
+// Numbers, Decimal & Negative Symbol 
 
 var zero  = document.getElementById('zero');
 var one = document.getElementById('one');

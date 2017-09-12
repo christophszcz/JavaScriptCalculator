@@ -5,6 +5,9 @@ window.addEventListener('keydown', function(e){
 	if (isNaN(e.key) === false){
 		maxNumbers();
 		if (full === true){
+			setTimeout(function(){
+				button.classList.remove('focus');
+			},500);
 			return;
 		}
 		removeZero();
