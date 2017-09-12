@@ -1,12 +1,11 @@
 window.addEventListener('keydown', function(e){
 	const button = document.querySelector(`.btn[data-key="${e.keyCode}"`);
 	if (!button) return;
-	button.classList.add('focus');
-	console.log(button);
-	// if () { 
-	// 	tempArray.push(e.key);
-	// 	display.value = tempArray.join('');
-	//  }
+	button.classList.toggle('focus');
+	// if (e.key.isNaN !== false || e.key === '.' ) { 
+		tempArray.push(e.key);
+		display.value = tempArray.join('');
+	// }
 });
 
 function removeTransition(e){

@@ -76,8 +76,8 @@ function numberActions(){
 	}
 	removeZero();
 	newExpression();
-	tempArray.push(this.getAttribute("data-value"));
-	console.log(this.getAttribute("data-value"));
+	tempArray.push(Number(this.getAttribute("data-value")) );
+	console.log(Number(this.getAttribute("data-value")) );
 	display.value = tempArray.join('');
 };
 
