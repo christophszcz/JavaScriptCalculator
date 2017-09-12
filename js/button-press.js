@@ -3,7 +3,14 @@ window.addEventListener('keydown', function(e){
 	if (!button) return;
 	button.classList.add('focus');
 	if (isNaN(e.key) === false){
-		tempArray.push(Number(e.key));
+		maxNumbers();
+		if (full === true){
+			return;
+		}
+		removeZero();
+		newExpression();
+		tempArray.push(e.key);
+		console.log(e.key);
 		display.value = tempArray.join('');
 	}else{
 		decimalActions();
