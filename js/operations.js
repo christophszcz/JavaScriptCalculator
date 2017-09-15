@@ -360,7 +360,8 @@ division.addEventListener('click', divisionFunction);
 
 // Clear Last  
 
-clearLast.addEventListener('click', function (){
+clearLast.addEventListener('click', clearLastFunction);
+function clearLastFunction (){
 	if (tempArray.length >= 1){
 		tempArray = [];
 		display.value = "0";
@@ -373,7 +374,7 @@ clearLast.addEventListener('click', function (){
 		array = [];
 		display.value = "0";
 	} 
-});  
+};  
 
 // Clear  
 

@@ -20,7 +20,9 @@ window.addEventListener('keydown', function(e){
 	} else if(e.keyCode === 13){
 		equalsFunction();
 	} else if(e.keyCode === 65){
-		clearFunction()
+		clearFunction();
+	} else if(e.keyCode === 67){
+		clearLastFunction();
 	} else if(e.keyCode === 189){
 		subtractionFunction();
 	}
