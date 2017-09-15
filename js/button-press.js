@@ -25,6 +25,8 @@ window.addEventListener('keydown', function(e){
 		clearLastFunction();
 	} else if(e.keyCode === 189){
 		subtractionFunction();
+	} else if(e.keyCode === 187){
+		additionFunction();
 	}
 	console.log(e.key);
 	setTimeout(function(){
