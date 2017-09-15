@@ -17,6 +17,10 @@ window.addEventListener('keydown', function(e){
 		display.value = tempArray.join('');
 	}else if (e.keyCode === '.'){
 		decimalActions();
+	} else if(e.keyCode === 13){
+		equalsFunction();
+	} else if(e.keyCode === 65){
+		clearFunction()
 	} else if(e.keyCode === 189){
 		subtractionFunction();
 	}

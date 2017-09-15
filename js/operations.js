@@ -377,7 +377,8 @@ clearLast.addEventListener('click', function (){
 
 // Clear  
 
-clear.addEventListener('click', function(){
+clear.addEventListener('click', clearFunction); 
+function clearFunction(){
 	display.style.direction = 'RTL';
 	array = [];
 	tempArray = [];
@@ -389,11 +390,12 @@ clear.addEventListener('click', function(){
 	multiplicationFunction.called = false;
 	divisionFunction.called = false;
 	equalsFunctionCalled = false;
-});
+};
 
 // Equals 
 
-equals.addEventListener('click', function equalsFunction(){
+equals.addEventListener('click', equalsFunction);
+function equalsFunction(){
 	equalsFunctionCalled = true;
 
 	if (tempArray.length >= 1){
@@ -484,4 +486,4 @@ equals.addEventListener('click', function equalsFunction(){
 			display.value = changeBackToNum.toExponential(3);
 		}
 	}
-});
+};
