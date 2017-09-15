@@ -1,4 +1,4 @@
-/* Operations */
+// Operations  
 
 var addition = document.getElementById('addition');
 // var subtraction = document.getElementById('subtraction');
@@ -8,7 +8,7 @@ var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 var clearLast = document.getElementById('last-clear');
 
-/* Addition */
+// Addition  
 
 function additionFunction(){
 	if (array.length >= 1 && tempArray.length < 1){
@@ -98,7 +98,7 @@ function additionFunction(){
 
 addition.addEventListener('click', additionFunction);
 
-/* Subtraction */
+// Subtraction  
 
 function subtractionFunction(){
 	if (tempArray.length < 1 && array.length < 1 && Math.sign(array[0]) !== -1 ){
@@ -187,7 +187,7 @@ function subtractionFunction(){
 
 subtraction.addEventListener('click', subtractionFunction);
 
-/* Multiplication */
+// Multiplication  
 
 function multiplicationFunction(){
 	if (array.length >= 1 && tempArray.length < 1){
@@ -274,7 +274,7 @@ function multiplicationFunction(){
 
 multiplication.addEventListener('click', multiplicationFunction);
 
-/* Division */
+// Division 
 
 function divisionFunction(){
 	if (array.length >= 1 && tempArray.length < 1){
@@ -358,7 +358,7 @@ function divisionFunction(){
 
 division.addEventListener('click', divisionFunction);
 
-/* Clear Last */
+// Clear Last  
 
 clearLast.addEventListener('click', function (){
 	if (tempArray.length >= 1){
@@ -375,7 +375,7 @@ clearLast.addEventListener('click', function (){
 	} 
 });  
 
-/* Clear */ 
+// Clear  
 
 clear.addEventListener('click', function(){
 	display.style.direction = 'RTL';
@@ -391,7 +391,7 @@ clear.addEventListener('click', function(){
 	equalsFunctionCalled = false;
 });
 
-/* Equals */
+// Equals 
 
 equals.addEventListener('click', function equalsFunction(){
 	equalsFunctionCalled = true;

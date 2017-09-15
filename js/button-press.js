@@ -15,9 +15,12 @@ window.addEventListener('keydown', function(e){
 		tempArray.push(e.key);
 		console.log(e.key);
 		display.value = tempArray.join('');
-	}else{
+	}else if (e.keyCode === '.'){
 		decimalActions();
+	} else if(e.keyCode === 189){
+		subtractionFunction();
 	}
+	console.log(e.key);
 	setTimeout(function(){
 		button.classList.remove('focus');
 	},500);
