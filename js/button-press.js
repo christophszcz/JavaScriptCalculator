@@ -29,6 +29,8 @@ window.addEventListener('keydown', function(e){
 		additionFunction();
 	}else if(e.keyCode === 88){
 		multiplicationFunction();
+	}else if(e.keyCode === 191){
+		divisionFunction();
 	}
 	console.log(e.key);
 	setTimeout(function(){
